@@ -33,7 +33,7 @@ if page == 'Connection':
             except Exception as e:
                 st.error(f"Failed to connect to SQLite database: {e}")
 
-    else:
+    elif db_type == 'Other':
         with st.form(key='connection_form'):
             ip = st.text_input('IP Address', key='ip')
             port = st.text_input('Port', key='port')
@@ -50,15 +50,25 @@ if page == 'Connection':
             # For example, if you're using SQLAlchemy, you can create an engine like this:
             # engine = create_engine(f'mysql+pymysql://{username}:{password}@{ip}:{port}/dbname')
 
+    elif db_type == 'CSV':
+        uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+        if uploaded_file is not None:
+            df = pd.read_csv(uploaded_file)
+            st.session_state.df = df  # Store the DataFrame in st.session_state
+            st.success("CSV file uploaded successfully!")
 
 
-# View Data
 # View Data
 elif page == 'View Data':
     st.title('View Data')
+      
+    if 'df' in st.session_state:
+        df = st.session_state.df
+        st.dataframe(df)
 
-    if 'conn' not in st.session_state:
+    elif 'conn' not in st.session_state:
         st.error("Please connect to a database first.")
+        
     else:
         conn = st.session_state.conn
         db_type = st.session_state.db_type  # Retrieve the database type from st.session_state
