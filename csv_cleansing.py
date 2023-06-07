@@ -58,13 +58,8 @@ elif page == 'Data Processing':
         st.subheader('Data Parsing')
         # Add your data parsing code here
 
-# Add some space before placing the button at the bottom
-for _ in range(20):
-    st.sidebar.write("")
-
-# Export button in the sidebar
-if 'df' in st.session_state:
+# Export button in the sidebar       
+if 'df' in st.session_state and st.sidebar.button('Export Data as CSV'):
     df = st.session_state.df
     b64 = df_to_base64(df)  # Convert DataFrame to base64
-    href = f'<a href="data:file/csv;base64,{b64}" download="data.csv">Export Data as CSV</a>'
-    st.sidebar.markdown(href, unsafe_allow_html=True)
+    st.sidebar.markdown(f'<a href="data:file/csv;base64,{b64}" download="data.csv">Download CSV File</a>', unsafe_allow_html=True)
