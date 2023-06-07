@@ -14,7 +14,7 @@ if page == 'Home':
 
     uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
     if uploaded_file is not None:
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_csv(uploaded_file, encoding='utf-8')
         st.session_state.df = df  # Store the DataFrame in st.session_state
         st.success("CSV file uploaded successfully!")
 
