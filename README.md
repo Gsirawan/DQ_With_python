@@ -8,4 +8,4 @@ Application engineer: ChatGPT
 <br>
 <br>
 ## Application link
-https://gsirawan-dq-with-python-sqlite-bas-wh9g6t.streamlit.app/
+[CSV APP V0.01](https://dq-with-python-csv-cleansing-v001.streamlit.app/)
