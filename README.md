@@ -1,5 +1,8 @@
 # DQ_With_python 
-DQ tool box using python and streamlit framework.
+DQ tools box using python and streamlit framework.
+### Tools kit
+ - tool for cleaning and processing data from CSV file
+ - TBD
 <br>
 ## Authors
 Application architecture: Ghaith
