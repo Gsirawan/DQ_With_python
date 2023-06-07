@@ -20,7 +20,8 @@ if page == 'Home':
 
 # View Data
 elif page == 'View Data':
-    st.title('View Data')
+    st.title('-')
+    st.subheader("📊 View Data")
 
     if 'df' in st.session_state:
         df = st.session_state.df
