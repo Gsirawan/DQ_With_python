@@ -8,4 +8,4 @@ Application engineer: ChatGPT
 <br>
 <br>
 ## Application link
-[CSV APP V0.01](https://dq-with-python-csv-cleansing-v001.streamlit.app/)
+You can test <a href="https://dq-with-python-csv-cleansing-v001.streamlit.app" target="_blank">CSV APP V0.01</a>
