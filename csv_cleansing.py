@@ -27,7 +27,7 @@ elif page == 'View Data':
         df = st.session_state.df
         st.dataframe(df)
 
-        st.subheader('Column Names')
+        st.subheader("📓 Workbooks")
         # Create DataFrame with column names
         columns_df = pd.DataFrame(
             df.columns.tolist(), columns=["Column Names"])
